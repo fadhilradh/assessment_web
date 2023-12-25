@@ -37,8 +37,10 @@
 					<input type="text" name="port" id="port" class="input" placeholder="Port" />
 				</div>
 			</div>
-			<button class="btn" type="button" onclick="toggleSampleDbInfo()">Show/Hide Credentials</button>
-			<div class=" my-4 p-4 bg-gray-800 text-white rounded" id="sampleDbInfo">
+
+			<button class="mb-4 btn" type="button" onclick="toggleSampleDbInfo()">Show/Hide Credentials</button>
+
+			<div class=" mb-4 p-4 bg-gray-800 text-white rounded" id="sampleDbInfo">
 				<p class="text-xl mb-2">Sample DB Credentials</p>
 				<ul>
 					<li><strong>Host:</strong> 65817845.dorsy.net</li>
