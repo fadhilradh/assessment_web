@@ -37,9 +37,20 @@
 					<input type="text" name="port" id="port" class="input" placeholder="Port" />
 				</div>
 			</div>
+			<button class="btn" type="button" onclick="toggleSampleDbInfo()">Show/Hide Credentials</button>
+			<div class=" my-4 p-4 bg-gray-800 text-white rounded" id="sampleDbInfo">
+				<p class="text-xl mb-2">Sample DB Credentials</p>
+				<ul>
+					<li><strong>Host:</strong> 65817845.dorsy.net</li>
+					<li><strong>Database Name:</strong> d03f0154</li>
+					<li><strong>Username:</strong> d03f0154</li>
+					<li><strong>Password:</strong> xaxqneYvB5u9YQYesPZC</li>
+					<li><strong>Port:</strong> 3306</li>
+				</ul>
+			</div>
 			<h2 class="text-xl text-[#38bdf8] font-bold">Query</h2>
 			<div class="mt-2 mb-4 rounded-lg">
-				<textarea required name="query" class="input h-[400px]"></textarea>
+				<textarea required name="query" class="input h-[200px]"></textarea>
 			</div>
 			<button type="submit" class="btn">Search</button>
 		</form>
@@ -49,6 +60,10 @@
 	</main>
 
 	<script>
+		function toggleSampleDbInfo() {
+			var sampleDbInfo = document.getElementById("sampleDbInfo");
+			sampleDbInfo.style.display = sampleDbInfo.style.display === "none" ? "block" : "none";
+		}
 
 		var ctx = document.getElementById("myChart").getContext('2d');
 		var myChart = new Chart(ctx, {
