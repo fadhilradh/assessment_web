@@ -38,17 +38,28 @@
 				</div>
 			</div>
 
-			<button class="mb-4 btn" type="button" onclick="toggleSampleDbInfo()">Show/Hide Credentials</button>
+			<button class="mb-4 btn" type="button" onclick="toggleSampleDbInfo()">Show/Hide Info</button>
 
 			<div class=" mb-4 p-4 bg-gray-800 text-white rounded" id="sampleDbInfo">
-				<p class="text-xl mb-2">Sample DB Credentials</p>
-				<ul>
-					<li><strong>Host:</strong> 65817845.dorsy.net</li>
-					<li><strong>Database Name:</strong> d03f0154</li>
-					<li><strong>Username:</strong> d03f0154</li>
-					<li><strong>Password:</strong> xaxqneYvB5u9YQYesPZC</li>
-					<li><strong>Port:</strong> 3306</li>
-				</ul>
+				<div class="grid grid-cols-2">
+					<span>
+						<p class="text-xl mb-2">MySQL Credentials Sample</p>
+						<ul>
+							<li><strong>Host:</strong> 65817845.dorsy.net</li>
+							<li><strong>Database Name:</strong> d03f0154</li>
+							<li><strong>Username:</strong> d03f0154</li>
+							<li><strong>Password:</strong> xaxqneYvB5u9YQYesPZC</li>
+							<li><strong>Port:</strong> 3306</li>
+						</ul>
+					</span>
+					<span>
+						<p class="text-xl mb-2">Queries Sample</p>
+						<p>SELECT * from Daily_Email_Log</p>
+						<p>SELECT HOUR(timestamp) AS hour, AVG(temperature) AS average_temperature
+							FROM AC_Thermometer_Log
+							GROUP BY HOUR(timestamp);</p>
+					</span>
+				</div>
 			</div>
 			<h2 class="text-xl text-[#38bdf8] font-bold">Query</h2>
 			<div class="mt-2 mb-4 rounded-lg">
