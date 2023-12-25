@@ -2,7 +2,7 @@
 <html>
 
 <head>
-	<title>Database Query Tool</title>
+	<title>Fadhil Radhian's Query Tool</title>
 	<script src="https://cdn.tailwindcss.com"></script>
 	<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 	<script type="text/javascript" src="./js/utils.js"></script>
@@ -10,39 +10,40 @@
 </head>
 
 <body>
-	<main class="container mx-auto p-4">
-		<h2 class="text-2xl font-bold">MySQL Data</h2>
+	<main class="container mx-auto sm:p-8 p-4">
+		<h1 class="text-center text-4xl mb-4">MySQL Query Tool</h1>
+		<h2 class="text-xl text-[#38bdf8] font-bold">Data</h2>
 		<form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
-			<div class="grid grid-cols-2 gap-4 mt-4 mb-8 rounded-lg">
+			<div class="grid grid-cols-2 sm:gap-x-8 gap-x-4 gap-y-4 mt-4 mb-8 rounded-lg">
 				<div>
-					<label for="host" class="block text-sm font-medium text-gray-700">MySQL Host</label>
+					<label for="host" class="label">Host</label>
 					<input type="text" required name="host" id="host" class="input" placeholder="Host" />
 				</div>
 				<div>
-					<label for="dbName" class="block text-sm font-medium text-gray-700">MySQL Database</label>
-					<input type="text" required name="dbName" id="dbName" class="input" placeholder="Database" />
+					<label for="dbName" class="label">Database Name</label>
+					<input type="text" required name="dbName" id="dbName" class="input" placeholder="DB" />
 				</div>
 				<div>
-					<label for="username" class="block text-sm font-medium text-gray-700">MySQL Username</label>
+					<label for="username" class="label">Username</label>
 					<input type="text" required name="username" id="username" class="input" placeholder="Username" />
 				</div>
 				<div>
-					<label for="password" class="block text-sm font-medium text-gray-700">MySQL Password</label>
+					<label for="password" class="label">Password</label>
 					<input type="password" required name="password" id="password" class="input"
 						placeholder="Password" />
 				</div>
 				<div>
-					<label for="port" class="block text-sm font-medium text-gray-700">MySQL Port</label>
+					<label for="port" class="label">Port</label>
 					<input type="text" name="port" id="port" class="input" placeholder="Port" />
 				</div>
 			</div>
-			<h2 class="text-2xl font-bold">MySQL Query</h2>
+			<h2 class="text-xl text-[#38bdf8] font-bold">Query</h2>
 			<div class="mt-2 mb-4 rounded-lg">
 				<textarea required name="query" class="input h-[400px]"></textarea>
 			</div>
 			<button type="submit" class="btn">Search</button>
 		</form>
-		<div style="width: 800px; margin: 0px auto;">
+		<div class="w-full mt-8">
 			<canvas id="myChart"></canvas>
 		</div>
 	</main>
