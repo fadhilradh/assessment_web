@@ -10,7 +10,13 @@
 </head>
 
 <body>
-	<main class="container mx-auto sm:p-8 p-4">
+	<script>
+		function toggleSampleDbInfo() {
+			var sampleDbInfo = document.getElementById("sampleDbInfo");
+			sampleDbInfo.style.display = sampleDbInfo.style.display === "none" ? "block" : "none";
+		}
+	</script>
+	<main class="container max-w-4xl mx-auto sm:p-8 p-4">
 		<h1 class="text-center text-4xl mb-4">MySQL Query Tool</h1>
 		<h2 class="text-xl text-[#38bdf8] font-bold">Data</h2>
 		<form action="<?php echo $_SERVER["PHP_SELF"] ?>" method="post">
@@ -54,7 +60,7 @@
 					</span>
 					<span>
 						<p class="text-xl mb-2">Queries Sample</p>
-						<p>SELECT * from Daily_Email_Log</p>
+						<p>SELECT * from Daily_Email_Log;</p>
 						<p>SELECT HOUR(timestamp) AS hour, AVG(temperature) AS average_temperature
 							FROM AC_Thermometer_Log
 							GROUP BY HOUR(timestamp);</p>
@@ -67,29 +73,43 @@
 			</div>
 			<button type="submit" class="btn">Search</button>
 		</form>
-		<div class="w-full mt-8">
+		<div class="w-full mt-8 bg-[#000] p-4 rounded-lg">
 			<canvas id="myChart"></canvas>
 		</div>
 	</main>
 
 	<script>
-		function toggleSampleDbInfo() {
-			var sampleDbInfo = document.getElementById("sampleDbInfo");
-			sampleDbInfo.style.display = sampleDbInfo.style.display === "none" ? "block" : "none";
-		}
-
-		var ctx = document.getElementById("myChart").getContext('2d');
-		var myChart = new Chart(ctx, {
+		const ctx = document.getElementById("myChart").getContext('2d');
+		const myChart = new Chart(ctx, {
 			type: 'line',
 			data: {
 				...parseJsonForChart(<?php include 'query.php' ?>),
 			},
 			options: {
-				plugins: {
-					colors: {
-						enabled: true
+				responsive: true,
+				scales: {
+					x: {
+						ticks: {
+							color: '#fff'
+						},
+					},
+					y: {
+						ticks: {
+							color: '#fff'
+						},
 					}
-				}
+				},
+				plugins: {
+
+					legend: {
+						position: 'top',
+						labels: {
+							color: "#ffffff",
+						}
+					},
+
+				},
+
 			}
 		},
 		);
