@@ -46,7 +46,7 @@
 
 			<button class="mb-4 btn" type="button" onclick="toggleSampleDbInfo()">Show/Hide Info</button>
 
-			<div class=" mb-4 p-4 bg-gray-800 text-white rounded" id="sampleDbInfo">
+			<div class=" mb-4 p-4 bg-[#182235] text-white rounded" id="sampleDbInfo">
 				<div class="grid grid-cols-2">
 					<span>
 						<p class="text-xl mb-2">MySQL Credentials Sample</p>
@@ -73,7 +73,7 @@
 			</div>
 			<button type="submit" class="btn">Search</button>
 		</form>
-		<div class="w-full mt-8 bg-[#000] p-4 rounded-lg">
+		<div class="w-full mt-8">
 			<canvas id="myChart"></canvas>
 		</div>
 	</main>
